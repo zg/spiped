@@ -26,6 +26,10 @@ clean:
 		( cd $${D} && ${MAKE} clean ) || exit 2;	\
 	done
 
+.PHONY: test
+test:
+	tests/spiped/test_spiped.sh
+
 # Developer targets: These only work with BSD make
 Makefiles:
 	${MAKE} -f Makefile.BSD Makefiles
